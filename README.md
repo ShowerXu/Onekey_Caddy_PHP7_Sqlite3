@@ -73,6 +73,24 @@ bash c.sh -v
 bash c.sh -b
 ```
 
+## caddy控制命令
+```
+ 启动： systemctl start caddy
+ 停止： systemctl stop caddy
+ 重启： systemctl restart caddy
+ 网站目录： /www
+ 配置文件：/etc/dylanbai8/caddy/caddyfile
+```
+ 
+## typecho伪静态
+#### 配置文件的80和443里面加入以下代码
+```
+rewrite  {    
+    if {path} not_has admin
+    to {path} {path}/ /index.php
+}
+```
+
 ## 一键卸载命令：
 ```
 卸载 caddy
